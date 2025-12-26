@@ -1,0 +1,431 @@
+/* ==========================================================
+   NAVIGATION BAR (Categories)
+========================================================== */
+.navBar {
+  background: color-mix(
+    in srgb,
+    var(--color-bg-primary),
+    var(--color-bg-inverse) 3%
+  );
+  border-bottom: 1px solid
+    color-mix(in srgb, var(--color-bg-inverse) 25%, transparent);
+  border-top: 1px solid
+    color-mix(in srgb, var(--color-bg-inverse) 50%, transparent);
+  transition: background-color var(--transition-time) ease;
+  overflow: visible;
+  padding: 0.5rem 0;
+}
+
+.navContainer {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  overflow: visible;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.desktopLogo {
+  display: flex;
+  align-items: center;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  flex-shrink: 0;
+}
+
+.desktopLogo:hover {
+  opacity: 0.85;
+  transform: scale(1.02);
+}
+
+.navList {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  overflow: visible;
+  scrollbar-width: none;
+  flex-wrap: nowrap;
+}
+
+.navList::-webkit-scrollbar {
+  display: none;
+}
+
+.mobileFooter {
+  display: none;
+}
+
+/* ==========================================================
+   NAV ITEMS
+========================================================== */
+.navItem {
+  position: relative;
+  white-space: nowrap;
+  flex: 0 0 auto;
+  overflow: visible;
+}
+
+.navLink {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.5rem 1.25rem;
+  color: var(--color-bg-inverse);
+  text-decoration: none;
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  position: relative;
+}
+
+.navLink:hover {
+  color: var(--color-primary);
+}
+
+.navLink.active {
+  background-color: var(--color-primary);
+  color: #fff;
+  font-weight: 600;
+  box-shadow: 0 4px 12px
+    color-mix(in srgb, var(--color-primary) 40%, transparent);
+}
+
+.navIcon {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navItem:hover .navIcon {
+  transform: rotate(180deg);
+}
+
+/* ==========================================================
+   DROPDOWN MENU (SubCategories)
+========================================================== */
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 220px;
+  background: var(--color-bg-primary);
+  border: 1px solid var(--color-primary);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px
+    color-mix(in srgb, var(--color-neutral-900) 15%, transparent);
+  overflow: visible;
+  z-index: 9999;
+  backdrop-filter: blur(12px);
+  pointer-events: auto;
+  margin-top: 0.25rem;
+}
+
+.dropdown::before {
+  content: '';
+  position: absolute;
+  top: -0.5rem;
+  left: 0;
+  width: 100%;
+  height: 0.5rem;
+  background: transparent;
+}
+
+.dropdown::after {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: transparent transparent var(--color-primary) transparent;
+}
+
+.dropdownList {
+  list-style: none;
+  padding: 0.5rem;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.dropdownItem {
+  width: 100%;
+}
+
+.dropdownLink {
+  display: block;
+  padding: 0.625rem 0.875rem;
+  color: var(--color-bg-inverse);
+  text-decoration: none;
+  font-size: var(--font-size-sm);
+  border-radius: 6px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.dropdownLink:hover {
+  color: var(--color-primary);
+  transform: translateX(4px);
+}
+
+.dropdownDivider {
+  height: 1px;
+  background: color-mix(in srgb, var(--color-bg-inverse) 10%, transparent);
+  margin: 0.5rem 0;
+}
+
+/* ==========================================================
+   MOBILE RESPONSIVE
+========================================================== */
+.mobileHeader {
+  display: none;
+}
+
+.scrollContainer {
+  display: contents;
+}
+
+.overlay {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  /* Mobile Drawer */
+  .navBar {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    max-width: none;
+    height: 100vh;
+    z-index: 2000; /* Higher than TopBar */
+    border-right: none;
+    transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    /* Ensure no blur on the drawer itself */
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    /* Fix for blurriness */
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+  }
+
+  .navBar.open {
+    left: 0;
+  }
+
+  /* Sticky Mobile Header */
+  .mobileHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 1.5rem;
+    border-bottom: 1px solid var(--color-border);
+    background: var(--color-primary);
+    flex: 0 0 auto; /* Don't shrink */
+    z-index: 10;
+    box-shadow: 0 0px 8px
+      color-mix(in srgb, var(--color-primary) 50%, transparent);
+  }
+
+  .closeButton {
+    background: none;
+    border: none;
+    color: var(--color-neutral-5);
+    cursor: pointer;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mobileThemeSwitcher {
+    display: flex;
+    align-items: center;
+  }
+
+  /* Scrollable Content Area */
+  .scrollContainer {
+    display: block;
+    flex: 1;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .navContainer {
+    padding: 0;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    background-color: var(--color-bg-primary);
+  }
+
+  /* Hide desktop logo on mobile */
+  .desktopLogo {
+    display: none;
+  }
+
+  /* Mobile List */
+  .navList {
+    flex-direction: column;
+    width: 100%;
+    align-items: stretch;
+    gap: 0;
+    padding: 1rem 0;
+    overflow-y: visible; /* Handled by scrollContainer */
+    height: auto;
+    justify-content: flex-start;
+    font-weight: 600;
+  }
+
+  .navItem {
+    width: 100%;
+    border-bottom: none;
+  }
+
+  .navItem:last-child {
+    border-bottom: none;
+  }
+
+  .navLink {
+    padding: 1rem 0;
+    justify-content: center;
+    width: 100%;
+    font-size: 1.125rem;
+    font-weight: 600;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    border-radius: 0;
+  }
+
+  .navLink:hover {
+    background-color: color-mix(in srgb, var(--color-primary) 25%, transparent);
+    color: var(--color-bg-inverse);
+  }
+
+  .navLinkWrapper {
+    width: 100%;
+  }
+
+  .navIcon {
+    margin-left: 0.5rem;
+    color: var(--color-primary);
+  }
+
+  .navIcon.rotate {
+    transform: rotate(180deg);
+  }
+
+  /* Mobile Dropdown */
+  .dropdown {
+    position: static;
+    width: 100%;
+    min-width: unset;
+    box-shadow: none;
+    border: none;
+    background: var(--color-bg-secondary);
+    border-radius: 8px;
+    margin-top: 0;
+    transform: none !important;
+  }
+
+  .dropdown::before,
+  .dropdown::after {
+    display: none;
+  }
+
+  .dropdownList {
+    padding: 0.5rem;
+  }
+
+  .dropdownLink {
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+  }
+
+  /* Mobile Footer */
+  .mobileFooter {
+    margin-top: auto; /* Push to bottom if content is short */
+    padding: 1.5rem 2rem 2rem;
+    border-top: 1px solid var(--color-border);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    background: var(--color-bg-primary);
+  }
+
+  /* Hide Sign In button on mobile */
+  .signInButton {
+    display: none;
+  }
+
+  .socialIcons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .socialIcon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: var(--color-bg-secondary);
+    color: var(--color-bg-inverse);
+    transition: all 0.2s;
+    border: 1px solid var(--color-border);
+  }
+
+  .socialIcon:hover {
+    background-color: var(--color-primary);
+    color: #fff;
+    border-color: var(--color-primary);
+  }
+
+  .footerLinks {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    padding: 0 0 2.5rem;
+  }
+
+  .footerRow {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .footerLinks a {
+    color: var(--color-text-muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footerLinks a:hover {
+    color: var(--color-bg-inverse);
+  }
+
+  .footerLinks span {
+    opacity: 0.5;
+  }
+}

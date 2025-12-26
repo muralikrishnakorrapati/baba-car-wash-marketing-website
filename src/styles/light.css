@@ -1,0 +1,22 @@
+/* ===========================================================
+   Light Theme Palette
+   =========================================================== */
+
+:root[data-theme='light'],
+.light {
+  /* === Primary Surface Layers === */
+
+  --color-bg-primary-lighter: #ffffff; /* highest layer – floating cards, modals */
+  --color-bg-primary-light: #f8fbff; /* slightly lifted panels / sections */
+  --color-bg-primary: #eaf4ff; /* base background */
+  --color-bg-primary-dark: #c7e2ff; /* subtle hover / secondary surface */
+  --color-bg-primary-darker: #a8d3ff; /* pressed / deep border background */
+
+  /* === Backgrounds – Inverse Layers (dark text zones, footers, headers) === */
+
+  --color-bg-inverse-lighter: #4a4a4a; /* muted dark gray for icons on light */
+  --color-bg-inverse-light: #303030; /* main dark text surface */
+  --color-bg-inverse: #1e1e1e; /* stronger dark tone */
+  --color-bg-inverse-dark: #121212; /* high-contrast black */
+  --color-bg-inverse-darker: #000000; /* absolute black (shadows / overlays) */
+}

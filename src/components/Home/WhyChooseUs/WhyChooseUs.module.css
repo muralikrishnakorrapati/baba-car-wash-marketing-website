@@ -1,0 +1,150 @@
+.section {
+  background-color: #fff;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.banner {
+  background-color: var(--color-primary);
+  padding: 2rem 0;
+  margin-bottom: 3rem;
+}
+
+.bannerContainer {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.bannerTitle {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-secondary); /* Gold color */
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.bannerButton {
+  background-color: #fff;
+  color: var(--color-primary);
+  border: none;
+  padding: 0.75rem 2rem;
+  border-radius: 50px;
+  font-weight: 600;
+}
+
+.bannerButton:hover {
+  background-color: var(--color-secondary);
+  color: #fff;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.subtitle {
+  font-family: var(--font-body);
+  font-size: 1.125rem;
+  color: var(--color-primary);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.subtitle::before {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 2px;
+  background-color: var(--color-secondary);
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #000;
+}
+
+.description {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: #000;
+  font-weight: 600;
+  max-width: 800px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2rem;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.5rem;
+}
+
+.iconWrapper {
+  color: var(--color-secondary);
+}
+
+.icon {
+  stroke-width: 1.5px;
+}
+
+.itemText {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: #000;
+  line-height: 1.5;
+  max-width: 200px;
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .bannerContainer {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .bannerTitle {
+    font-size: 1.8rem;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

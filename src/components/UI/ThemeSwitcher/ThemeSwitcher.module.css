@@ -1,0 +1,84 @@
+/* ==========================================================
+   THEME SWITCHER
+========================================================== */
+.themeSwitcher {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  color: var(--color-neutral-5);
+  background: color-mix(in srgb, var(--color-neutral-5) 15%, transparent);
+  border: 2px solid color-mix(in srgb, var(--color-primary) 50%, transparent);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color var(--transition-time) ease,
+    border-color var(--transition-time) ease,
+    transform var(--transition-time) ease;
+}
+
+.themeSwitcher:hover {
+  background: color-mix(in srgb, var(--color-neutral-5) 20%, transparent);
+  border-color: color-mix(in srgb, var(--color-primary) 100%, transparent);
+  transform: scale(1.05);
+}
+
+.themeSwitcher:active {
+  transform: scale(0.98);
+}
+
+/* Icon Styling */
+.icon {
+  width: 16px;
+  height: 16px;
+  transition: color var(--transition-time) ease;
+}
+
+/* Rotating Animation */
+.rotating {
+  animation: rotate 0.5s ease-in-out;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Optional: Add a subtle glow effect */
+.themeSwitcher::after {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: 10px;
+  padding: 2px;
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--color-primary) 40%, transparent),
+    color-mix(in srgb, var(--color-primary) 20%, transparent)
+  );
+  opacity: 0;
+  transition: opacity var(--transition-time) ease;
+  z-index: -1;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+}
+
+.themeSwitcher:hover::after {
+  opacity: 1;
+}
+
+/* Change logo color based on theme */
+:root[data-theme='light'] .menuButton {
+  color: var(--color-neutral-5);
+}
+
+:root[data-theme='dark'] {
+  color: var(--color-bg-inverse);
+}

@@ -1,0 +1,20 @@
+/* ===========================================================
+   Dark Theme Palette
+   =========================================================== */
+
+:root[data-theme='dark'] {
+  /* === Primary Surface Layers === */
+
+  --color-bg-primary-lighter: #4a4a4a;
+  --color-bg-primary-light: #303030;
+  --color-bg-primary: #1e1e1e;
+  --color-bg-primary-dark: #121212;
+  --color-bg-primary-darker: #000000;
+
+  /* === Inverse Layers (light surfaces for contrast areas) === */
+  --color-bg-inverse-lighter: #ffffff;
+  --color-bg-inverse-light: #f8fbff;
+  --color-bg-inverse: #eaf4ff;
+  --color-bg-inverse-dark: #c7e2ff;
+  --color-bg-inverse-darker: #a8d3ff;
+}

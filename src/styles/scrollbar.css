@@ -1,0 +1,96 @@
+/* ===========================================================
+   ⚙️ Custom Scrollbar Styles (Animated + Themed)
+   -----------------------------------------------------------
+   Works in both light and dark modes.
+   Uses your existing CSS variables and adapts automatically
+   with the [data-theme] attribute.
+   =========================================================== */
+
+/* === Base Scrollbar === */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+  transition: opacity var(--transition-time) ease-in-out;
+}
+
+/* === Scrollbar Track === */
+::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 8px;
+}
+
+/* === Scrollbar Thumb === */
+::-webkit-scrollbar-thumb {
+  background-color: color-mix(
+    in srgb,
+    var(--color-bg-inverse) 35%,
+    transparent
+  );
+  border-radius: 8px;
+  border: 2px solid var(--color-bg-primary);
+  opacity: 0; /* hidden by default (auto-hide effect) */
+  transition: opacity var(--transition-time) ease-in-out,
+    background-color var(--transition-time) ease-in-out;
+}
+
+/* === Hover State (fade-in thumb) === */
+:hover::-webkit-scrollbar-thumb {
+  opacity: 1;
+}
+
+/* === Thumb Hover Interaction === */
+::-webkit-scrollbar-thumb:hover {
+  background-color: color-mix(
+    in srgb,
+    var(--color-bg-inverse) 65%,
+    transparent
+  );
+}
+
+/* === Scrollbar Corner === */
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+/* ===========================================================
+   🦊 Firefox Native Scrollbar
+   -----------------------------------------------------------
+   Uses system-level support for color + thin style.
+   =========================================================== */
+* {
+  scrollbar-color: color-mix(in srgb, var(--color-bg-inverse) 40%, transparent)
+    color-mix(in srgb, var(--color-bg-primary) 85%, transparent);
+  scrollbar-width: thin;
+  transition: scrollbar-color var(--transition-time) ease-in-out;
+}
+
+/* ===========================================================
+   🌙 Dark Theme Enhancements
+   -----------------------------------------------------------
+   Slightly brighter thumb for better visibility on dark surfaces.
+   =========================================================== */
+[data-theme='dark'] ::-webkit-scrollbar-thumb {
+  background-color: color-mix(
+    in srgb,
+    var(--color-bg-inverse-light) 25%,
+    transparent
+  );
+  border-color: var(--color-bg-primary-dark);
+}
+
+[data-theme='dark'] ::-webkit-scrollbar-thumb:hover {
+  background-color: color-mix(
+    in srgb,
+    var(--color-bg-inverse-light) 60%,
+    transparent
+  );
+}
+
+[data-theme='dark'] * {
+  scrollbar-color: color-mix(
+      in srgb,
+      var(--color-bg-inverse-light) 45%,
+      transparent
+    )
+    color-mix(in srgb, var(--color-bg-primary-dark) 80%, transparent);
+}

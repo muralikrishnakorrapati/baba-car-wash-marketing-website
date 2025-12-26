@@ -1,0 +1,210 @@
+.section {
+  padding: 0 0 3rem 0;
+  background-color: var(--color-bg-primary);
+}
+
+.banner {
+  background-color: var(--color-primary);
+  padding: 2.5rem 0;
+  margin-bottom: 3rem;
+}
+
+.bannerContainer {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.bannerTitle {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-secondary); /* Gold color */
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.bannerButton {
+  background-color: #fff;
+  color: var(--color-primary);
+  border: none;
+  padding: 0.75rem 2rem;
+  border-radius: 50px;
+  font-weight: 600;
+}
+
+.bannerButton:hover {
+  background-color: var(--color-secondary);
+  color: #fff;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.subtitle {
+  font-family: var(--font-body);
+  font-size: 1.125rem;
+  color: var(--color-primary);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.subtitle::before {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 2px;
+  background-color: var(--color-secondary);
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-bg-inverse);
+}
+
+.description {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--color-text-muted);
+  max-width: 600px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.highlight {
+  border: 2px solid var(--color-primary);
+  background: linear-gradient(to bottom, #fff, #f8f5ff);
+}
+
+.planTitle {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-bg-inverse);
+  margin-bottom: 1.5rem;
+  min-height: 3rem; /* Align titles */
+  display: flex;
+  align-items: center;
+}
+
+.priceWrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0.25rem;
+  margin-bottom: 1.5rem;
+  color: var(--color-primary);
+}
+
+.currency {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 0.5rem;
+}
+
+.price {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.multiPrice {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.priceRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px dashed rgba(0, 0, 0, 0.1);
+}
+
+.priceRow:last-child {
+  border-bottom: none;
+}
+
+.carType {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+}
+
+.priceWrapperSmall {
+  display: flex;
+  align-items: baseline;
+  gap: 0.25rem;
+  color: var(--color-primary);
+}
+
+.currencySmall {
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.priceSmall {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.planSubtitle {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  margin-bottom: 2rem;
+  font-style: italic;
+}
+
+.button {
+  margin-top: auto;
+  width: 100%;
+}

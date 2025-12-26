@@ -1,0 +1,57 @@
+/* ===========================================================
+   Toastify v11 Overrides (Ultra Compact)
+   =========================================================== */
+
+:root {
+  /* 1. Remove the default constraints so it can shrink */
+  --toastify-toast-min-height: 0px;
+  --toastify-toast-padding: 2px; /* We will control padding in the class below */
+  --toastify-toast-width: 280px; /* Let it wrap content, or keep fixed like 320px */
+}
+
+/* 2. Main Toast Container */
+.Toastify__toast {
+  /* Precise sizing */
+  min-height: 50px !important; /* Forces a fixed small height */
+  padding: 0px 10px !important; /* Small horizontal padding */
+  margin-bottom: 8px !important; /* Gap between multiple toasts */
+
+  /* Text Styling */
+  font-size: 13px !important;
+  font-weight: 500;
+  border-radius: 6px !important;
+
+  /* Layout alignment */
+  align-items: center !important;
+  display: flex !important;
+}
+
+/* 3. The Body (The wrapper around text and icon) */
+.Toastify__toast-body {
+  margin: 0 !important; /* CRITICAL: Removes default layout gaps */
+  padding: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+/* 4. The Icon */
+.Toastify__toast-icon {
+  width: 16px !important; /* Small icon */
+  margin-right: 8px !important; /* Tight gap */
+  display: flex !important;
+  align-self: center !important;
+}
+
+/* 5. The Close Button */
+.Toastify__close-button {
+  align-self: center !important;
+  width: 18px !important;
+  height: 18px !important;
+  line-height: 18px !important; /* Ensures X is centered */
+  opacity: 0.6;
+}
+
+/* 6. The Progress Bar (Make it thinner) */
+.Toastify__progress-bar {
+  height: 2px !important;
+}

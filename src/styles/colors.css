@@ -1,0 +1,28 @@
+:root {
+  /* === Brand Colors === */
+  --color-primary-darker: #1f1651; /* Deepest Purple */
+  --color-primary-dark: #281f6a; /* Dark Purple */
+  --color-primary: #312782; /* Base Purple */
+  --color-primary-light: #5342a5; /* Light Purple */
+  --color-primary-lighter: #8f7fd9; /* Lightest Purple */
+
+  /* Secondary Scale (Gold - For Conversions/Action) */
+  --color-secondary-darker: #a68a2b; /* Deep Rich Gold */
+  --color-secondary-dark: #c29d32; /* Dark Gold */
+  --color-secondary: #d4af37; /* Base Gold (High Action) */
+  --color-secondary-light: #e0c060; /* Light Gold */
+  --color-secondary-lighter: #f5edd5; /* Very Light Cream Gold */
+
+  /* === Semantic Status Colors === */
+  --color-success: #22c55e;
+  --color-error: #ef4444;
+  --color-warning: #f59e0b;
+  --color-info: #3b82f6;
+
+  /* === Fixed Colors === */
+  --color-neutral-1: #000000;
+  --color-neutral-2: #4b4b4b; /* Dark Gray – primary text / dark surfaces */
+  --color-neutral-3: #8c8c8c; /* Mid Gray – borders / secondary text */
+  --color-neutral-4: #d1d1d1; /* Light Gray – backgrounds / muted elements */
+  --color-neutral-5: #ffffff; /* Pure White – brightest tone */
+}

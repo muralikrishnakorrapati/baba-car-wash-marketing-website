@@ -1,0 +1,38 @@
+/* ===========================================================
+   External Font Imports fron Google Fonts
+   =========================================================== */
+
+/* Inter */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&family=Roboto+Mono:wght@400;500;700&display=swap');
+
+/* Roboto */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+/* Roboto Mono*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&display=swap');
+
+/* Poppins*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* Abel*/
+@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+
+/* ===========================================================
+   Global Font Assignments
+   =========================================================== */
+
+:root {
+  --font-heading: 'Abel', sans-serif;
+  --font-body: 'Poppins', system-ui, sans-serif;
+  --font-code: 'Roboto Mono', monospace;
+
+  --font-size-xxs: 0.55rem; /* 9px   → tiny captions / disclaimers */
+  --font-size-xs: 0.675rem; /* 11px  → small captions / meta text */
+  --font-size-sm: 0.875rem; /* 14px  → base small text */
+  --font-size-base: 1.125rem; /* 18px  → body text */
+  --font-size-md: 1.45rem; /* 23px  → section headings */
+  --font-size-lg: 1.9rem; /* 30px  → large titles */
+  --font-size-xl: 2.5rem; /* 40px  → main headings */
+  --font-size-2xl: 3.25rem; /* 52px  → hero titles */
+  --font-size-3xl: 4.25rem; /* 68px  → display / banners */
+}
