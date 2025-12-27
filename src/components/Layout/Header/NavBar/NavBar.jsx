@@ -64,7 +64,7 @@ export default function NavBar({
         { label: 'House Cleaning', path: '/services/house-cleaning' },
       ],
     },
-    // { id: 'gallery', label: 'Gallery', path: '/gallery', submenu: null },
+    { id: 'gallery', label: 'Gallery', path: '/gallery', submenu: null },
     { id: 'contact', label: 'Contact Us', path: '/contact', submenu: null },
   ];
 
