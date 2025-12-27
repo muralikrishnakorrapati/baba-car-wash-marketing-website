@@ -82,6 +82,7 @@
   transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
   position: relative;
+  white-space: nowrap;
 }
 
 .navLink:hover {
@@ -89,11 +90,53 @@
 }
 
 .navLink.active {
-  background-color: var(--color-primary);
-  color: #fff;
+  background-color: var(--color-bg-primary-light);
+  color: var(--color-secondary);
   font-weight: 600;
-  box-shadow: 0 4px 12px
+}
+
+.chevron {
+  transition: transform 0.3s ease;
+}
+
+.navItem:hover .chevron {
+  transform: rotate(180deg);
+}
+
+/* Submenu */
+.submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 220px;
+  background: var(--color-primary);
+  border-radius: 0 0 8px 8px;
+  overflow: hidden;
+  z-index: 9999;
+  box-shadow: 0 8px 24px
     color-mix(in srgb, var(--color-primary) 40%, transparent);
+  margin-top: 0.5rem;
+}
+
+.submenuLink {
+  display: block;
+  padding: 0.75rem 1.25rem;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  transition: all 0.2s ease;
+  background-color: var(--color-primary);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.submenuLink:last-child {
+  border-bottom: none;
+}
+
+.submenuLink:hover {
+  background-color: var(--color-secondary);
+  padding-left: 1.5rem;
 }
 
 .navIcon {

@@ -24,13 +24,13 @@
   font-family: var(--font-heading);
   font-size: 2.5rem;
   font-weight: 700;
-  color: var(--color-secondary); /* Gold color */
+  color: var(--color-secondary);
   margin: 0;
   text-transform: uppercase;
 }
 
 .bannerButton {
-  background-color: #fff;
+  background-color: var(--color-neutral-5);
   color: var(--color-primary);
   border: none;
   padding: 0.75rem 2rem;
@@ -40,7 +40,7 @@
 
 .bannerButton:hover {
   background-color: var(--color-secondary);
-  color: #fff;
+  color: var(--color-neutral-5);
 }
 
 .container {
@@ -86,7 +86,7 @@
 .description {
   font-family: var(--font-body);
   font-size: 1rem;
-  color: var(--color-text-muted);
+  color: color-mix(in srgb, var(--color-bg-inverse) 100%, transparent);
   max-width: 600px;
 }
 
@@ -98,8 +98,8 @@
 }
 
 .card {
-  background: #fff;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: var(--color-neutral-5);
+  border: 1px solid var(--color-neutral-4);
   border-radius: 12px;
   padding: 2rem 1.5rem;
   display: flex;
@@ -125,7 +125,7 @@
   font-family: var(--font-heading);
   font-size: 1.25rem;
   font-weight: 700;
-  color: var(--color-bg-inverse);
+  color: var(--color-neutral-1);
   margin-bottom: 1.5rem;
   min-height: 3rem; /* Align titles */
   display: flex;
@@ -176,7 +176,7 @@
 .carType {
   font-size: 0.85rem;
   font-weight: 600;
-  color: var(--color-text-muted);
+  color: var(--color-neutral-1);
   text-transform: uppercase;
 }
 
@@ -199,7 +199,7 @@
 
 .planSubtitle {
   font-size: 0.9rem;
-  color: var(--color-text-muted);
+  color: var(--color-neutral-1);
   margin-bottom: 2rem;
   font-style: italic;
 }

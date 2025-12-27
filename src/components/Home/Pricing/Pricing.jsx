@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 import { Button } from '@/components/UI';
 import styles from './Pricing.module.css';
 
@@ -132,12 +133,15 @@ const Pricing = () => {
 
               <p className={styles.planSubtitle}>{plan.subtitle}</p>
 
-              <Button
-                variant={plan.highlight ? 'primary' : 'outline'}
-                className={styles.button}
-              >
-                Book Now
-              </Button>
+              <Link href="/appointment">
+                <Button
+                  variant={plan.highlight ? 'primary' : 'outline'}
+                  className={styles.button}
+                  fullWidth
+                >
+                  Book Now
+                </Button>
+              </Link>
             </motion.div>
           ))}
         </div>

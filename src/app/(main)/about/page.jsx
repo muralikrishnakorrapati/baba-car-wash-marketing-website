@@ -1,7 +1,26 @@
 import React from 'react';
+import {
+  PageHero,
+  History,
+  Director,
+  OurValues,
+  WhatWeGive,
+  WhyChooseUs,
+  ClientDetails,
+} from '@/components/About';
 
-const page = () => {
-  return <div>About</div>;
+const AboutPage = () => {
+  return (
+    <>
+      <PageHero title="About Us" backgroundImage="/image4.avif" />
+      <History />
+      <Director />
+      <OurValues />
+      <WhatWeGive />
+      <WhyChooseUs />
+      <ClientDetails />
+    </>
+  );
 };
 
-export default page;
+export default AboutPage;

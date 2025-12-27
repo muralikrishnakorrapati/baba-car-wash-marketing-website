@@ -1,0 +1,103 @@
+/* ==========================================================
+   WORK SCHEDULE SECTION
+========================================================== */
+.section {
+  padding: 4rem 0;
+  background-color: var(--color-bg-primary);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Section Header */
+.header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.subtitle {
+  display: inline-block;
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--color-secondary);
+  text-transform: capitalize;
+  letter-spacing: 0.05em;
+  position: relative;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.subtitle::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 2px;
+  background-color: var(--color-secondary);
+}
+
+.title {
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  font-weight: 700;
+  color: var(--color-bg-inverse);
+  margin: 1rem 0 0;
+}
+
+/* Content Box */
+.contentBox {
+  background: linear-gradient(135deg, var(--color-primary) 0%, #4b2ca8 100%);
+  border-radius: 16px;
+  padding: 2.5rem;
+  box-shadow: 0 8px 24px
+    color-mix(in srgb, var(--color-primary) 30%, transparent);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.text {
+  font-size: var(--font-size-base);
+  line-height: 1.8;
+  color: #ffffff;
+  text-align: justify;
+  margin: 0;
+}
+
+/* ==========================================================
+   RESPONSIVE DESIGN
+========================================================== */
+@media (max-width: 768px) {
+  .section {
+    padding: 3rem 0;
+  }
+
+  .container {
+    padding: 0 1.5rem;
+  }
+
+  .contentBox {
+    padding: 2rem;
+  }
+
+  .text {
+    font-size: var(--font-size-sm);
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: 2rem 0;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+
+  .contentBox {
+    padding: 1.5rem;
+  }
+}

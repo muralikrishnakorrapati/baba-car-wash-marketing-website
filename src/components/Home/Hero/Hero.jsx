@@ -11,22 +11,19 @@ import styles from './Hero.module.css';
 const slides = [
   {
     id: 1,
-    image:
-      'https://images.unsplash.com/photo-1601362840469-51e4d8d58785?q=80&w=1920&auto=format&fit=crop',
+    image: '/image1.avif',
     title: 'Premium Car Care',
     subtitle: 'Experience the best car wash service in Dubai',
   },
   {
     id: 2,
-    image:
-      'https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?q=80&w=1920&auto=format&fit=crop',
+    image: '/image2.avif',
     title: 'Professional Detailing',
     subtitle: "Restore your car's showroom shine",
   },
   {
     id: 3,
-    image:
-      'https://images.unsplash.com/photo-1552930294-6b595f4c2974?q=80&w=1920&auto=format&fit=crop',
+    image: '/image3.avif',
     title: 'Eco-Friendly Wash',
     subtitle: 'Sustainable cleaning solutions for your vehicle',
   },
@@ -130,7 +127,7 @@ const Hero = () => {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.9 }}
           >
-            <Link href="/contact">
+            <Link href="/appointment">
               <Button variant="primary" size="medium">
                 Book Now
               </Button>

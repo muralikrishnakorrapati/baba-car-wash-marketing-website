@@ -1,0 +1,583 @@
+/* ==========================================================
+   MOBILE CAR WASH SERVICE PAGE
+========================================================== */
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* ==========================================================
+   HERO SECTION
+========================================================== */
+
+.hero {
+  position: relative;
+  height: 60vh;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--color-primary) 0%, #2d1a5c 100%);
+  background-image: url('/image2.avif');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  overflow: hidden;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--color-primary) 90%, transparent) 0%,
+    color-mix(in srgb, var(--color-primary) 70%, transparent) 100%
+  );
+}
+
+.heroContent {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  text-align: center;
+}
+
+.heroText {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, var(--color-secondary) 0%, #b8860b 100%);
+  color: var(--color-bg-primary);
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: 50px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  box-shadow: 0 8px 24px
+    color-mix(in srgb, var(--color-secondary) 40%, transparent);
+}
+
+.heroTitle {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 800;
+  color: var(--color-secondary);
+  line-height: 1.1;
+  margin: 0;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.heroDescription {
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  color: #ffffff;
+  max-width: 700px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ==========================================================
+   FEATURES SECTION
+========================================================== */
+
+.featuresSection {
+  padding: 5rem 0;
+  background-color: var(--color-bg-primary);
+}
+
+.sectionContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.sectionSubtitle {
+  display: inline-block;
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--color-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1rem;
+}
+
+.sectionTitle {
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 700;
+  color: var(--color-bg-inverse);
+  margin: 0.5rem 0 0;
+}
+
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+.featureCard {
+  padding: 2.5rem 2rem;
+  background: var(--color-bg-secondary);
+  border: 2px solid color-mix(in srgb, var(--color-neutral-4), transparent 80%);
+  border-radius: 12px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.featureCard:hover {
+  border-color: var(--color-secondary);
+  transform: translateY(-8px);
+  box-shadow: 0 12px 32px
+    color-mix(in srgb, var(--color-primary) 20%, transparent);
+}
+
+.featureIcon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--color-primary) 0%, #4b2ca8 100%);
+  color: var(--color-secondary);
+  border-radius: 50%;
+}
+
+.featureTitle {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--color-bg-inverse);
+  margin: 0 0 0.75rem;
+}
+
+.featureDescription {
+  font-size: 0.95rem;
+  color: var(--color-bg-inverse-light);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ==========================================================
+   BENEFITS SECTION
+========================================================== */
+
+.benefitsSection {
+  padding: 5rem 0;
+  background: linear-gradient(
+    135deg,
+    var(--color-bg-primary) 0%,
+    color-mix(in srgb, var(--color-primary) 5%, var(--color-bg-primary)) 100%
+  );
+}
+
+.benefitsContent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.benefitsText {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.benefitsDescription {
+  font-size: 1.05rem;
+  color: var(--color-bg-inverse-light);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.benefitsList {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.benefitItem {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1rem;
+  color: var(--color-bg-inverse);
+  line-height: 1.5;
+}
+
+.checkIcon {
+  color: var(--color-secondary);
+  flex-shrink: 0;
+}
+
+.benefitsImage {
+  position: relative;
+}
+
+.imageWrapper {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px
+    color-mix(in srgb, var(--color-primary) 30%, transparent);
+}
+
+.imageWrapper::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--color-primary) 20%, transparent) 0%,
+    transparent 100%
+  );
+  z-index: 1;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.imageWrapper:hover .image {
+  transform: scale(1.05);
+}
+
+/* ==========================================================
+   BOOKING SECTION
+========================================================== */
+
+.bookingSection {
+  padding: 5rem 0;
+  background-color: var(--color-bg-primary);
+}
+
+/* ==========================================================
+   FORM SECTION
+========================================================== */
+
+.formSection {
+  padding: 5rem 0;
+  background: var(--color-bg-primary);
+}
+
+.formWrapper {
+  background: var(--color-bg-secondary);
+  border-radius: 20px;
+  padding: 3rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.formHeader {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.headerIcon {
+  color: var(--color-secondary);
+  margin-bottom: 1rem;
+}
+
+.formTitle {
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  font-weight: 700;
+  color: var(--color-bg-inverse);
+  margin: 0 0 0.75rem;
+}
+
+.formDescription {
+  font-size: 1.05rem;
+  color: var(--color-bg-inverse-light);
+  margin: 0;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Form Styles */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.formSectionGroup {
+  padding: 0;
+}
+
+.sectionGroupTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-bg-inverse);
+  margin: 0 0 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--color-secondary);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.label {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--color-bg-inverse);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.label svg {
+  color: var(--color-secondary);
+}
+
+.input,
+.select,
+.textarea {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  font-size: 1rem;
+  font-family: inherit;
+  color: var(--color-bg-inverse);
+  background: var(--color-bg-primary);
+  border: 2px solid var(--color-neutral-4, #e0e0e0);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.input::placeholder,
+.textarea::placeholder {
+  color: #999;
+}
+
+.input:focus,
+.select:focus,
+.textarea:focus {
+  border-color: var(--color-secondary);
+  box-shadow: 0 0 0 3px
+    color-mix(in srgb, var(--color-secondary) 10%, transparent);
+}
+
+.select {
+  cursor: pointer;
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* Submit Button */
+.submitButton {
+  width: 100%;
+  padding: 1.25rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: linear-gradient(135deg, var(--color-secondary), #b8860b);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  box-shadow: 0 4px 15px
+    color-mix(in srgb, var(--color-secondary) 30%, transparent);
+  margin-top: 1rem;
+}
+
+.submitButton:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px
+    color-mix(in srgb, var(--color-secondary) 40%, transparent);
+}
+
+.submitButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Info Section */
+.infoSection {
+  padding: 4rem 0;
+  background: var(--color-bg-secondary);
+}
+
+.infoGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.infoCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  background: var(--color-bg-primary);
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.infoCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.infoIcon {
+  color: var(--color-secondary);
+  margin-bottom: 1rem;
+}
+
+.infoTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-bg-inverse);
+  margin: 0 0 0.75rem;
+}
+
+.infoDescription {
+  font-size: 1rem;
+  color: var(--color-bg-inverse-light);
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* ==========================================================
+   CTA SECTION
+========================================================== */
+
+.ctaSection {
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, var(--color-primary) 0%, #2d1a5c 100%);
+  text-align: center;
+}
+
+.ctaContent {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.ctaTitle {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 800;
+  color: var(--color-secondary);
+  margin: 0 0 1rem;
+}
+
+.ctaDescription {
+  font-size: 1.15rem;
+  color: #ffffff;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ==========================================================
+   RESPONSIVE DESIGN
+========================================================== */
+
+@media (max-width: 968px) {
+  .hero {
+    height: 50vh;
+    min-height: 350px;
+  }
+
+  .heroTitle {
+    font-size: 2.5rem;
+  }
+
+  .benefitsContent {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .benefitsImage {
+    order: -1;
+  }
+
+  .featuresSection,
+  .benefitsSection,
+  .bookingSection {
+    padding: 4rem 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero {
+    height: 45vh;
+    min-height: 300px;
+    background-attachment: scroll;
+  }
+
+  .sectionContainer {
+    padding: 0 1.5rem;
+  }
+
+  .featuresGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .featureCard {
+    padding: 2rem 1.5rem;
+  }
+
+  .benefitsList {
+    gap: 0.875rem;
+  }
+
+  .ctaSection {
+    padding: 3rem 1.5rem;
+  }
+}

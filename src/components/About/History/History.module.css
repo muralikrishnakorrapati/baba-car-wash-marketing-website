@@ -1,0 +1,198 @@
+/* ==========================================================
+   HISTORY SECTION
+========================================================== */
+.section {
+  padding: 4rem 0;
+  background-color: var(--color-bg-primary);
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Section Header */
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.subtitle {
+  display: inline-block;
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--color-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.75rem;
+  position: relative;
+}
+
+.subtitle::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background-color: var(--color-secondary);
+}
+
+.title {
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  font-weight: 700;
+  color: var(--color-bg-inverse);
+  margin: 1rem 0 0;
+}
+
+/* Content Layout */
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  margin-bottom: 4rem;
+}
+
+.content:last-child {
+  margin-bottom: 0;
+}
+
+/* Image Wrapper */
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px
+    color-mix(in srgb, var(--color-bg-inverse) 15%, transparent);
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.imageWrapper:hover .image {
+  transform: scale(1.05);
+}
+
+/* Text Content */
+.textContent {
+  padding: 1rem;
+}
+
+.heading {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 1.5rem;
+}
+
+.description {
+  font-size: var(--font-size-base);
+  line-height: 1.8;
+  color: var(--color-bg-inverse);
+  text-align: justify;
+}
+
+/* Business History Box */
+.historyBox {
+  background-color: color-mix(
+    in srgb,
+    var(--color-bg-primary),
+    var(--color-bg-inverse) 3%
+  );
+  border: 3px solid var(--color-primary);
+  border-radius: 12px;
+  padding: 2.5rem;
+  box-shadow: 0 4px 12px
+    color-mix(in srgb, var(--color-bg-inverse) 10%, transparent);
+}
+
+.historyTitle {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 2rem;
+}
+
+.historyList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.historyItem {
+  font-size: var(--font-size-base);
+  line-height: 1.8;
+  color: var(--color-bg-inverse);
+  text-align: justify;
+  display: flex;
+  gap: 0.75rem;
+}
+
+.number {
+  font-weight: 700;
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+/* ==========================================================
+   RESPONSIVE DESIGN
+========================================================== */
+@media (max-width: 968px) {
+  .content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .historyBox {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 3rem 0;
+  }
+
+  .container {
+    padding: 0 1.5rem;
+  }
+
+  .sectionHeader {
+    margin-bottom: 3rem;
+  }
+
+  .content {
+    margin-bottom: 3rem;
+  }
+
+  .historyBox {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: 2rem 0;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+
+  .historyBox {
+    padding: 1.25rem;
+  }
+
+  .historyItem {
+    font-size: var(--font-size-sm);
+  }
+}

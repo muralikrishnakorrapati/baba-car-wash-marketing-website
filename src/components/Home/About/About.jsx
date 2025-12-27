@@ -82,7 +82,7 @@ const About = () => {
           >
             <div className={styles.imageContainer}>
               <Image
-                src="https://images.unsplash.com/photo-1601362840469-51e4d8d58785?q=80&w=1000&auto=format&fit=crop"
+                src="/image1.avif"
                 alt="Car Cleaning Service"
                 fill
                 className={styles.image}

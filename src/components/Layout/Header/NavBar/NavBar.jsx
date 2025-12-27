@@ -4,6 +4,7 @@ import { useState, useEffect, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 import {
   X,
   User,
@@ -23,6 +24,8 @@ export default function NavBar({
   onClose,
   categories: rawCategories = [],
 }) {
+  const pathname = usePathname();
+
   const categories = useMemo(() => {
     return rawCategories.map((category) => ({
       id: category.id,
@@ -37,6 +40,33 @@ export default function NavBar({
   }, [rawCategories]);
 
   const [activeDropdown, setActiveDropdown] = useState(null);
+
+  // Navigation menu items with submenus
+  const navItems = [
+    { id: 'home', label: 'Home', path: '/', submenu: null },
+    {
+      id: 'about',
+      label: 'About Us',
+      path: '/about',
+      submenu: [
+        { label: 'Work Schedules', path: '/about/work-schedules' },
+        { label: 'Communities', path: '/about/communities' },
+        { label: 'Terms & Conditions', path: '/terms' },
+      ],
+    },
+    {
+      id: 'services',
+      label: 'Services',
+      path: '/services',
+      submenu: [
+        { label: 'Car Wash & Cleaning', path: '/services/car-wash' },
+        { label: 'Mobile Car Wash Service', path: '/services/mobile-car-wash' },
+        { label: 'House Cleaning', path: '/services/house-cleaning' },
+      ],
+    },
+    // { id: 'gallery', label: 'Gallery', path: '/gallery', submenu: null },
+    { id: 'contact', label: 'Contact Us', path: '/contact', submenu: null },
+  ];
 
   // Close menu when resizing to desktop
   useEffect(() => {
@@ -103,86 +133,69 @@ export default function NavBar({
             </Link>
 
             <ul className={styles.navList}>
-              {/* Home Link */}
-              <motion.li
-                className={styles.navItem}
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3, delay: 0.05 }}
-                whileHover={{ scale: 1.05 }}
-              >
-                <Link href="/" className={styles.navLink} onClick={onClose}>
-                  Home
-                </Link>
-              </motion.li>
-
-              {/* About Us Link */}
-              <motion.li
-                className={styles.navItem}
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3, delay: 0.1 }}
-                whileHover={{ scale: 1.05 }}
-              >
-                <Link
-                  href="/about"
-                  className={styles.navLink}
-                  onClick={onClose}
+              {navItems.map((item, index) => (
+                <motion.li
+                  key={item.id}
+                  className={styles.navItem}
+                  initial={{ opacity: 0, y: -20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.3, delay: 0.05 * (index + 1) }}
+                  whileHover={{ scale: 1.05 }}
+                  onMouseEnter={() => item.submenu && handleMouseEnter(item.id)}
+                  onMouseLeave={() => item.submenu && handleMouseLeave()}
                 >
-                  About Us
-                </Link>
-              </motion.li>
+                  {item.submenu ? (
+                    <>
+                      <Link
+                        href={item.path}
+                        className={`${styles.navLink} ${
+                          pathname === item.path ||
+                          pathname.startsWith(item.path + '/')
+                            ? styles.active
+                            : ''
+                        }`}
+                        onClick={onClose}
+                      >
+                        {item.label}
+                        <ChevronDown size={16} className={styles.chevron} />
+                      </Link>
+                      <AnimatePresence>
+                        {activeDropdown === item.id && (
+                          <motion.div
+                            className={styles.submenu}
+                            initial={{ opacity: 0, y: -10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: -10 }}
+                            transition={{ duration: 0.2 }}
+                          >
+                            {item.submenu.map((subItem, subIndex) => (
+                              <Link
+                                key={subIndex}
+                                href={subItem.path}
+                                className={styles.submenuLink}
+                                onClick={onClose}
+                              >
+                                {subItem.label}
+                              </Link>
+                            ))}
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </>
+                  ) : (
+                    <Link
+                      href={item.path}
+                      className={`${styles.navLink} ${
+                        pathname === item.path ? styles.active : ''
+                      }`}
+                      onClick={onClose}
+                    >
+                      {item.label}
+                    </Link>
+                  )}
+                </motion.li>
+              ))}
 
-              {/* Services Link */}
-              <motion.li
-                className={styles.navItem}
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3, delay: 0.15 }}
-                whileHover={{ scale: 1.05 }}
-              >
-                <Link
-                  href="/services"
-                  className={styles.navLink}
-                  onClick={onClose}
-                >
-                  Services
-                </Link>
-              </motion.li>
-
-              {/* Gallery Link */}
-              <motion.li
-                className={styles.navItem}
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3, delay: 0.2 }}
-                whileHover={{ scale: 1.05 }}
-              >
-                <Link
-                  href="/gallery"
-                  className={styles.navLink}
-                  onClick={onClose}
-                >
-                  Gallery
-                </Link>
-              </motion.li>
-
-              {/* Contact Us Link */}
-              <motion.li
-                className={styles.navItem}
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3, delay: 0.25 }}
-                whileHover={{ scale: 1.05 }}
-              >
-                <Link
-                  href="/contact"
-                  className={styles.navLink}
-                  onClick={onClose}
-                >
-                  Contact Us
-                </Link>
-              </motion.li>
               {/* Login Button */}
               <li className={`${styles.navItem} ${styles.signInButton}`}>
                 <Button

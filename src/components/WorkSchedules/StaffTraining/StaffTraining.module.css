@@ -1,0 +1,206 @@
+/* ==========================================================
+   STAFF TRAINING SECTION
+========================================================== */
+.section {
+  padding: 4rem 0;
+  background-color: var(--color-bg-primary);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Section Header */
+.header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.subtitle {
+  display: inline-block;
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--color-secondary);
+  text-transform: capitalize;
+  letter-spacing: 0.05em;
+  position: relative;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.subtitle::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 2px;
+  background-color: var(--color-secondary);
+}
+
+.title {
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  font-weight: 700;
+  color: var(--color-bg-inverse);
+  margin: 1rem 0 0;
+}
+
+/* Training Box */
+.trainingBox {
+  background: linear-gradient(135deg, var(--color-primary) 0%, #4b2ca8 100%);
+  border-radius: 16px;
+  padding: 3rem;
+  box-shadow: 0 8px 24px
+    color-mix(in srgb, var(--color-primary) 30%, transparent);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Hierarchy Diagram */
+.hierarchy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.hierarchyLevel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.hierarchyItem {
+  padding: 1rem 2rem;
+  font-size: var(--font-size-base);
+  font-weight: 700;
+  text-align: center;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 500px;
+  border: 3px solid #ffffff;
+}
+
+.manager {
+  background-color: #5b9bd5;
+  color: #ffffff;
+}
+
+.officeStaff {
+  background-color: #5b9bd5;
+  color: #ffffff;
+}
+
+.staffSplit {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  width: 100%;
+  max-width: 500px;
+  margin-top: 0.5rem;
+}
+
+.splitItem {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 0.75rem 1rem;
+  text-align: center;
+  font-weight: 700;
+  border-radius: 4px;
+  border: 3px solid #ffffff;
+}
+
+.cleaningStaff {
+  background-color: #5b9bd5;
+  color: #ffffff;
+}
+
+.arrow {
+  color: #ffffff;
+  margin: 0.25rem 0;
+}
+
+/* Training Description */
+.description {
+  background-color: rgba(200, 191, 231, 0.9);
+  border-radius: 0 50px 0 0;
+  padding: 2rem;
+  margin-top: 2rem;
+}
+
+.description p {
+  font-size: var(--font-size-base);
+  line-height: 1.7;
+  color: #000000;
+  margin: 0;
+  font-weight: 500;
+}
+
+/* ==========================================================
+   RESPONSIVE DESIGN
+========================================================== */
+@media (max-width: 768px) {
+  .section {
+    padding: 3rem 0;
+  }
+
+  .container {
+    padding: 0 1.5rem;
+  }
+
+  .trainingBox {
+    padding: 2rem;
+  }
+
+  .hierarchyItem {
+    padding: 0.85rem 1.5rem;
+    font-size: var(--font-size-sm);
+  }
+
+  .splitItem {
+    padding: 0.65rem 0.75rem;
+    font-size: var(--font-size-sm);
+  }
+
+  .description {
+    padding: 1.5rem;
+  }
+
+  .description p {
+    font-size: var(--font-size-sm);
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: 2rem 0;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+
+  .trainingBox {
+    padding: 1.5rem;
+  }
+
+  .hierarchyItem {
+    padding: 0.75rem 1rem;
+  }
+
+  .staffSplit {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  .description {
+    padding: 1.25rem;
+    border-radius: 0 30px 0 0;
+  }
+}

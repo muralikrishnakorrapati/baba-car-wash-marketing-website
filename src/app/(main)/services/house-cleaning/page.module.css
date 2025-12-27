@@ -1,0 +1,412 @@
+/* ==========================================================
+   HOUSE CLEANING SERVICE PAGE
+========================================================== */
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* ==========================================================
+   HERO SECTION
+========================================================== */
+
+.hero {
+  position: relative;
+  height: 60vh;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url('/houseCleaningServicesImageHeroImage.png');
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.4) 0%,
+    rgba(0, 0, 0, 0.3) 100%
+  );
+}
+
+.heroContent {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 0 2rem;
+}
+
+.heroTitle {
+  font-size: clamp(3rem, 7vw, 5rem);
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  letter-spacing: -0.02em;
+}
+
+.highlight {
+  color: var(--color-secondary);
+}
+
+/* ==========================================================
+   SERVICES SECTION
+========================================================== */
+
+.servicesSection {
+  padding: 5rem 0;
+  background-color: var(--color-bg-primary);
+}
+
+.sectionContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.sectionSubtitle {
+  display: inline-block;
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--color-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.75rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.sectionSubtitle::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 2px;
+  background-color: var(--color-secondary);
+}
+
+.sectionTitle {
+  font-size: clamp(1.875rem, 4vw, 2.5rem);
+  font-weight: 700;
+  color: var(--color-bg-inverse);
+  margin: 0.5rem 0 0;
+}
+
+.servicesBox {
+  background: linear-gradient(135deg, var(--color-primary) 0%, #3d2070 100%);
+  padding: 3rem;
+  border-radius: 16px;
+  box-shadow: 0 12px 32px
+    color-mix(in srgb, var(--color-primary) 30%, transparent);
+}
+
+.servicesText {
+  font-size: 1rem;
+  color: #ffffff;
+  line-height: 1.8;
+  margin: 0 0 1.5rem;
+  text-align: justify;
+}
+
+.servicesText:last-child {
+  margin-bottom: 0;
+}
+
+.servicesText strong {
+  color: var(--color-secondary);
+  font-weight: 600;
+}
+
+/* ==========================================================
+   FEATURES SECTION
+========================================================== */
+
+.featuresSection {
+  padding: 5rem 0;
+  background: linear-gradient(
+    180deg,
+    var(--color-bg-primary) 0%,
+    color-mix(in srgb, var(--color-primary) 3%, var(--color-bg-primary)) 100%
+  );
+}
+
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+.featureCard {
+  padding: 2.5rem 2rem;
+  background: var(--color-bg-secondary);
+  border: 2px solid color-mix(in srgb, var(--color-neutral-4), transparent 80%);
+  border-radius: 12px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.featureCard:hover {
+  border-color: var(--color-secondary);
+  transform: translateY(-8px);
+  box-shadow: 0 12px 32px
+    color-mix(in srgb, var(--color-primary) 20%, transparent);
+}
+
+.featureIcon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--color-primary) 0%, #4b2ca8 100%);
+  color: var(--color-secondary);
+  border-radius: 50%;
+}
+
+.featureTitle {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--color-bg-inverse);
+  margin: 0 0 0.75rem;
+}
+
+.featureDescription {
+  font-size: 0.95rem;
+  color: var(--color-bg-inverse-light);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ==========================================================
+   CLEANING TIPS SECTION
+========================================================== */
+
+.tipsSection {
+  padding: 5rem 0;
+  background-color: var(--color-bg-primary);
+}
+
+.tipsTitle {
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 700;
+  color: var(--color-bg-inverse);
+  margin: 0;
+}
+
+.tipsBox {
+  background: linear-gradient(135deg, var(--color-primary) 0%, #3d2070 100%);
+  padding: 3rem;
+  border-radius: 16px;
+  box-shadow: 0 12px 32px
+    color-mix(in srgb, var(--color-primary) 30%, transparent);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.tipItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.tipHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.tipIcon {
+  color: var(--color-secondary);
+  flex-shrink: 0;
+}
+
+.tipTitle {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-secondary);
+  margin: 0;
+}
+
+.tipDescription {
+  font-size: 0.95rem;
+  color: #ffffff;
+  line-height: 1.7;
+  margin: 0;
+  padding-left: 2rem;
+  font-style: italic;
+}
+
+/* ==========================================================
+   WHY CHOOSE US SECTION
+========================================================== */
+
+.whyChooseSection {
+  padding: 5rem 0;
+  background: linear-gradient(
+    135deg,
+    var(--color-bg-primary) 0%,
+    color-mix(in srgb, var(--color-primary) 5%, var(--color-bg-primary)) 100%
+  );
+}
+
+.benefitsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.benefitItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: var(--color-bg-secondary);
+  border-radius: 12px;
+  border: 2px solid color-mix(in srgb, var(--color-neutral-4), transparent 80%);
+  transition: all 0.3s ease;
+}
+
+.benefitItem:hover {
+  border-color: var(--color-secondary);
+  transform: translateX(5px);
+  box-shadow: 0 8px 24px
+    color-mix(in srgb, var(--color-primary) 15%, transparent);
+}
+
+.checkIcon {
+  color: var(--color-secondary);
+  flex-shrink: 0;
+  margin-top: 0.125rem;
+}
+
+.benefitText {
+  font-size: 1rem;
+  color: var(--color-bg-inverse);
+  line-height: 1.6;
+}
+
+/* ==========================================================
+   BOOKING SECTION
+========================================================== */
+
+.bookingSection {
+  padding: 5rem 0;
+  background-color: var(--color-bg-primary);
+}
+
+/* ==========================================================
+   CTA SECTION
+========================================================== */
+
+.ctaSection {
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, var(--color-primary) 0%, #2d1a5c 100%);
+  text-align: center;
+}
+
+.ctaContent {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.ctaTitle {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 800;
+  color: var(--color-secondary);
+  margin: 0 0 1rem;
+}
+
+.ctaDescription {
+  font-size: 1.15rem;
+  color: #ffffff;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ==========================================================
+   RESPONSIVE DESIGN
+========================================================== */
+
+@media (max-width: 968px) {
+  .hero {
+    height: 50vh;
+    min-height: 350px;
+  }
+
+  .heroTitle {
+    font-size: 3rem;
+  }
+
+  .servicesSection,
+  .featuresSection,
+  .tipsSection,
+  .whyChooseSection,
+  .bookingSection {
+    padding: 4rem 0;
+  }
+
+  .servicesBox,
+  .tipsBox {
+    padding: 2.5rem 2rem;
+  }
+
+  .featuresGrid {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .benefitsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero {
+    height: 45vh;
+    min-height: 300px;
+  }
+
+  .heroTitle {
+    font-size: 2.5rem;
+  }
+
+  .sectionContainer {
+    padding: 0 1.5rem;
+  }
+
+  .servicesBox,
+  .tipsBox {
+    padding: 2rem 1.5rem;
+  }
+
+  .featuresGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .tipDescription {
+    padding-left: 0;
+  }
+
+  .ctaSection {
+    padding: 3rem 1.5rem;
+  }
+
+  .benefitItem {
+    padding: 1.25rem;
+  }
+}

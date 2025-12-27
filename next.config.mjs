@@ -4,12 +4,7 @@ const nextConfig = {
   output: 'export',
   reactCompiler: true,
   images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'images.unsplash.com',
-      },
-    ],
+    unoptimized: true,
   },
 };
 

@@ -1,7 +1,14 @@
 import React from 'react';
+import { PageHero } from '@/components/About';
+import { OurServices } from '@/components/Services';
 
-const page = () => {
-  return <div>Services</div>;
+const ServicesPage = () => {
+  return (
+    <>
+      <PageHero title="Services" backgroundImage="/image4.avif" />
+      <OurServices />
+    </>
+  );
 };
 
-export default page;
+export default ServicesPage;

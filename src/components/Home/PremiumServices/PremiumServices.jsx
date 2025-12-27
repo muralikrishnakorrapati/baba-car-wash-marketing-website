@@ -81,7 +81,7 @@ const PremiumServices = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
           >
             <Image
-              src="https://images.unsplash.com/photo-1563720223185-11003d516935?q=80&w=1000&auto=format&fit=crop"
+              src="/image4.avif"
               alt="Premium Car Interior"
               fill
               className={styles.image}
