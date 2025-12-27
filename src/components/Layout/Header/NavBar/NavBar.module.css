@@ -82,7 +82,7 @@
 }
 
 .navLink:hover {
-  color: var(--color-primary);
+  color: var(--color-secondary);
 }
 
 .navLink.active {
