@@ -310,7 +310,7 @@
     display: flex;
     flex-direction: column;
     min-height: 100%;
-    background-color: var(--color-bg-primary);
+    background-color: var(--color-primary);
   }
 
   /* Hide desktop logo on mobile */
@@ -400,11 +400,9 @@
   .mobileFooter {
     margin-top: auto; /* Push to bottom if content is short */
     padding: 1.5rem 2rem 2rem;
-    border-top: 1px solid var(--color-border);
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    background: var(--color-bg-primary);
   }
 
   /* Hide Sign In button on mobile */
@@ -425,7 +423,7 @@
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    background-color: var(--color-bg-secondary);
+    background-color: var(--color-bg-primary);
     color: var(--color-bg-inverse);
     transition: all 0.2s;
     border: 1px solid var(--color-border);
@@ -443,7 +441,7 @@
     align-items: center;
     gap: 0.5rem;
     font-size: 0.75rem;
-    color: var(--color-text-muted);
+    color: var(--color-neutral-5);
     padding: 0 0 2.5rem;
   }
 

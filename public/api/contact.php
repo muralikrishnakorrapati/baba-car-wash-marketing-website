@@ -1,4 +1,5 @@
 <?php
+error_reporting(0); // Suppress all PHP warnings/notices to ensure clean JSON output
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: POST, OPTIONS");
 header("Access-Control-Allow-Headers: Content-Type");
@@ -15,16 +16,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
   exit;
 }
 
-// ---- CONFIGURE YOUR GMAIL SMTP SETTINGS ----
-$mailHost     = "smtp.gmail.com";
-$mailUsername = "your-email@gmail.com"; // Update with your Gmail address
-$mailPassword = "YOUR_APP_PASSWORD_HERE"; // ⚠️ Use Gmail App Password here
-$mailPort     = 587;
-$mailSecure   = "tls";
+$mailHost     = "smtp.zoho.in";
+$mailUsername = "donot.reply@babacarwash.com";
+$mailPassword = "LuK2fxMWqKS6"; // Use Zoho App Password here
+$mailPort     = 465;
+$mailSecure   = "ssl";
 
 // Recipient email addresses
 $recipientEmail1 = "customerregistration@babagroup.ae";
-$recipientEmail2 = "info@babacarwash.ae"; // Add secondary email if needed
 
 // ---- COLLECT & VALIDATE INPUT ----
 $input = json_decode(file_get_contents("php://input"), true);
@@ -62,9 +61,6 @@ try {
   // ---- RECIPIENTS ----
   $mail->setFrom($mailUsername, "Baba Car Wash - Contact Form");
   $mail->addAddress($recipientEmail1);
-  if (!empty($recipientEmail2)) {
-    $mail->addAddress($recipientEmail2);
-  }
   $mail->addReplyTo($email, $name);
 
   // ---- EMAIL CONTENT ----

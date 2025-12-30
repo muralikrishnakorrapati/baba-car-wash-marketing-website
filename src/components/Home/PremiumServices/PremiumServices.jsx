@@ -15,6 +15,13 @@ const services = [
 ];
 
 const PremiumServices = () => {
+  const scrollToPlans = () => {
+    const pricingSection = document.getElementById('pricing-plans');
+    if (pricingSection) {
+      pricingSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   return (
     <section className={styles.section}>
       <div className={styles.container}>
@@ -66,7 +73,11 @@ const PremiumServices = () => {
                   </motion.li>
                 ))}
               </ul>
-              <Button variant="primary" className={styles.button}>
+              <Button
+                variant="primary"
+                className={styles.button}
+                onClick={scrollToPlans}
+              >
                 Get Plans
               </Button>
             </div>

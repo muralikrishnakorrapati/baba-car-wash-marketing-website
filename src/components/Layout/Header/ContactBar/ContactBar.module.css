@@ -1,0 +1,139 @@
+/* ==========================================================
+   CONTACT BAR (Phone, Email, Location)
+========================================================== */
+.contactBar {
+  width: 100%;
+  background-color: var(--color-bg-primary);
+  border-bottom: 1px solid
+    color-mix(in srgb, var(--color-bg-inverse) 10%, transparent);
+}
+
+.contactContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  padding: 0.75rem 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.contactItem {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.contactLink {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  background: linear-gradient(
+    135deg,
+    var(--color-primary) 0%,
+    var(--color-secondary) 100%
+  );
+  border: 2px solid color-mix(in srgb, var(--color-bg-inverse) 20%, transparent);
+  border-radius: 8px;
+  transform: rotate(45deg);
+}
+
+.icon {
+  color: var(--color-neutral-5);
+  transform: rotate(-45deg);
+  flex-shrink: 0;
+}
+
+.contactText {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.label {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--color-bg-inverse);
+  line-height: 1.2;
+}
+
+.text {
+  font-size: var(--font-size-xs);
+  color: var(--color-bg-inverse);
+  opacity: 0.9;
+  line-height: 1.2;
+}
+
+/* ==========================================================
+   MOBILE RESPONSIVE
+========================================================== */
+@media (max-width: 1024px) {
+  .contactContainer {
+    gap: 2rem;
+    padding: 0.75rem 1.5rem;
+  }
+
+  .text {
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .contactContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding: 0.75rem 1rem;
+  }
+
+  .contactItem {
+    gap: 0.5rem;
+    justify-content: center;
+  }
+
+  .iconWrapper {
+    width: 40px;
+    height: 40px;
+  }
+
+  .icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  .label {
+    font-size: 0.75rem;
+  }
+
+  .text {
+    font-size: 0.65rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contactContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+    padding: 0.75rem 0.75rem;
+  }
+
+  .contactItem {
+    width: 100%;
+  }
+
+  .contactLink {
+    width: 100%;
+    justify-content: center;
+  }
+}

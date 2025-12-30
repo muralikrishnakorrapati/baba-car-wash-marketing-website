@@ -84,7 +84,7 @@ const FooterContent = () => {
         </ul>
       </motion.div>
 
-      {/* Logo and Business Info - Center */}
+      {/* Logo and Business Info - Center Left */}
       <motion.div
         className={styles.centerSection}
         initial={{ opacity: 0, scale: 0.8 }}
@@ -184,6 +184,27 @@ const FooterContent = () => {
               </motion.a>
             );
           })}
+        </motion.div>
+      </motion.div>
+
+      {/* Opening Hours - Center Right */}
+      <motion.div
+        className={styles.openingHoursSection}
+        initial={{ opacity: 0, scale: 0.9 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.4, delay: 0.2 }}
+      >
+        <h3 className={styles.openingHoursTitle}>Opening Hours</h3>
+        <motion.div
+          className={styles.hoursCard}
+          whileHover={{ scale: 1.05 }}
+          transition={{ duration: 0.3 }}
+        >
+          <div className={styles.hoursContent}>
+            <span className={styles.hoursTime}>24/7</span>
+            <span className={styles.hoursLabel}>Service</span>
+          </div>
         </motion.div>
       </motion.div>
 

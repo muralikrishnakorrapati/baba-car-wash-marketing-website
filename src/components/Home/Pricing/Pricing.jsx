@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { Button } from '@/components/UI';
 import styles from './Pricing.module.css';
 
@@ -58,6 +58,8 @@ const plans = [
 ];
 
 const Pricing = () => {
+  const router = useRouter();
+
   return (
     <section className={styles.section}>
       {/* CTA Banner */}
@@ -66,13 +68,17 @@ const Pricing = () => {
           <h2 className={styles.bannerTitle}>
             HOUSE CLEANING SERVICES OFFERED
           </h2>
-          <Button variant="outline" className={styles.bannerButton}>
+          <Button
+            variant="outline"
+            className={styles.bannerButton}
+            onClick={() => router.push('/appointment')}
+          >
             Get A Quote
           </Button>
         </div>
       </div>
 
-      <div className={styles.container}>
+      <div className={styles.container} id="pricing-plans">
         <motion.div
           className={styles.header}
           initial={{ opacity: 0, y: -20 }}
@@ -133,15 +139,14 @@ const Pricing = () => {
 
               <p className={styles.planSubtitle}>{plan.subtitle}</p>
 
-              <Link href="/appointment">
-                <Button
-                  variant={plan.highlight ? 'primary' : 'outline'}
-                  className={styles.button}
-                  fullWidth
-                >
-                  Book Now
-                </Button>
-              </Link>
+              <Button
+                variant={plan.highlight ? 'primary' : 'outline'}
+                className={styles.button}
+                fullWidth
+                onClick={() => router.push('/appointment')}
+              >
+                Book Now
+              </Button>
             </motion.div>
           ))}
         </div>

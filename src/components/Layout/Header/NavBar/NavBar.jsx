@@ -198,22 +198,22 @@ export default function NavBar({
 
               {/* Login Button */}
               <li className={`${styles.navItem} ${styles.signInButton}`}>
-                <Button
+                {/* <Button
                   variant="primary"
                   size="small"
                   shape="soft"
                   btnColor="var(--color-secondary)"
                 >
                   Sign In
-                </Button>
+                </Button> */}
               </li>
             </ul>
 
             {/* Mobile Footer Section */}
             <div className={styles.mobileFooter}>
-              <Button size="medium" variant="secondary" fullWidth>
+              {/* <Button size="medium" variant="secondary" fullWidth>
                 Sign In
-              </Button>
+              </Button> */}
               <div className={styles.socialIcons}>
                 <a href="#" className={styles.socialIcon}>
                   <Youtube size={20} />

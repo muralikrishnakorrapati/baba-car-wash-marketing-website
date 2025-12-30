@@ -113,22 +113,55 @@ export default function BookingForm() {
 
     setIsSubmitting(true);
 
-    // Simulate API call
-    setTimeout(() => {
-      console.log('Form submitted:', formData);
-      alert('Booking submitted successfully! We will contact you shortly.');
-      setFormData({
-        date: '',
-        name: '',
-        email: '',
-        mobile: '',
-        alternativeMobile: '',
-        address: '',
-        parkingCarNumber: '',
-        service: '',
+    try {
+      // Use local PHP server URL if on localhost, otherwise relative path
+      const isLocal =
+        window.location.hostname === 'localhost' ||
+        window.location.hostname === '127.0.0.1';
+      const apiUrl = isLocal
+        ? 'http://localhost:8000/api/booking.php'
+        : '/api/booking.php';
+
+      const response = await fetch(apiUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
       });
+
+      const contentType = response.headers.get('content-type');
+      if (!contentType || !contentType.includes('application/json')) {
+        const text = await response.text();
+        console.error('Server response:', text);
+        throw new Error(
+          'Server returned non-JSON response. Check console for details.'
+        );
+      }
+
+      const result = await response.json();
+
+      if (response.ok && result.status === 'success') {
+        alert('Booking submitted successfully! We will contact you shortly.');
+        setFormData({
+          date: '',
+          name: '',
+          email: '',
+          mobile: '',
+          alternativeMobile: '',
+          address: '',
+          parkingCarNumber: '',
+          service: '',
+        });
+      } else {
+        alert(result.message || 'Something went wrong. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      alert('Failed to submit booking. Please try again later.');
+    } finally {
       setIsSubmitting(false);
-    }, 1500);
+    }
   };
 
   return (
