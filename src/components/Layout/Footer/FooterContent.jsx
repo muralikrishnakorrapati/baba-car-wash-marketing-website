@@ -16,11 +16,11 @@ import styles from './Footer.module.css';
 
 const FooterContent = () => {
   const serviceLinks = [
-    { name: 'Dust Removal', href: '/services/dust-removal' },
-    { name: 'Body Wash', href: '/services/body-wash' },
-    { name: 'Glass Cleaning', href: '/services/glass-cleaning' },
-    { name: 'Wheel Cleaning', href: '/services/wheel-cleaning' },
-    { name: 'Tire Polishing', href: '/services/tire-polishing' },
+    { name: 'Dust Removal', href: '/services/car-wash' },
+    { name: 'Body Wash', href: '/services/car-wash' },
+    { name: 'Glass Cleaning', href: '/services/car-wash' },
+    { name: 'Wheel Cleaning', href: '/services/car-wash' },
+    { name: 'Tire Polishing', href: '/services/car-wash' },
   ];
 
   const quickLinks = [

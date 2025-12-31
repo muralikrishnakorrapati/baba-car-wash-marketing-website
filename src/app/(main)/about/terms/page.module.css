@@ -1,0 +1,249 @@
+/* ==========================================================
+   ABOUT TERMS PAGE
+========================================================== */
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* ==========================================================
+   HERO SECTION
+========================================================== */
+
+.hero {
+  position: relative;
+  height: 50vh;
+  min-height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url('/image1.avif');
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
+}
+
+.heroContent {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 0 2rem;
+}
+
+.heroTitle {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* ==========================================================
+   TERMS SECTION
+========================================================== */
+
+.termsSection {
+  padding: 5rem 2rem;
+  background-color: var(--color-bg-primary);
+}
+
+.termsContainer {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Section Header */
+.header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.subtitle {
+  display: inline-block;
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--color-secondary);
+  text-transform: capitalize;
+  letter-spacing: 0.05em;
+  position: relative;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.subtitle::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 2px;
+  background-color: var(--color-secondary);
+}
+
+.title {
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  font-weight: 700;
+  color: var(--color-bg-inverse);
+  margin: 1rem 0 0;
+}
+
+.termsBox {
+  background-color: var(--color-primary);
+  padding: 3rem 2.5rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+:global([data-theme='dark']) .termsBox {
+  background-color: var(--color-primary);
+}
+
+.termsList {
+  list-style: decimal;
+  padding-left: 1.5rem;
+  color: #ffffff;
+  font-size: 1.125rem;
+  line-height: 1.8;
+}
+
+.termsList > li {
+  margin-bottom: 1.5rem;
+  padding-left: 0.5rem;
+}
+
+.termsList > li:last-child {
+  margin-bottom: 0;
+}
+
+.subList {
+  list-style: none;
+  padding-left: 1rem;
+  margin-top: 1rem;
+}
+
+.subList li {
+  margin-bottom: 0.75rem;
+  padding-left: 0.5rem;
+}
+
+.subList strong {
+  font-weight: 700;
+  margin-right: 0.5rem;
+}
+
+.additionalNote {
+  background-color: var(--color-bg-primary-light);
+  padding: 2rem 2.5rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  border-left: 4px solid var(--color-primary);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+:global([data-theme='dark']) .additionalNote {
+  border-left-color: var(--color-primary);
+}
+
+.additionalNote p {
+  margin: 0;
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: var(--color-bg-inverse-light);
+}
+
+.disclaimer {
+  background-color: var(--color-bg-primary-light);
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.disclaimer h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  color: var(--color-bg-inverse);
+  border-left: 4px solid var(--color-primary);
+  padding-left: 1rem;
+}
+
+:global([data-theme='dark']) .disclaimer h2 {
+  border-left-color: var(--color-primary);
+}
+
+.disclaimer h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: var(--color-bg-inverse);
+}
+
+.disclaimer p {
+  margin-bottom: 1.5rem;
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: var(--color-bg-inverse-light);
+  text-align: justify;
+}
+
+.disclaimer p:last-child {
+  margin-bottom: 0;
+}
+
+/* ==========================================================
+   RESPONSIVE DESIGN
+========================================================== */
+
+@media (max-width: 768px) {
+  .termsSection {
+    padding: 3rem 1rem;
+  }
+
+  .termsBox {
+    padding: 2rem 1.5rem;
+  }
+
+  .termsList {
+    font-size: 1rem;
+    padding-left: 1rem;
+  }
+
+  .additionalNote {
+    padding: 1.5rem;
+  }
+
+  .additionalNote p {
+    font-size: 1rem;
+  }
+
+  .disclaimer {
+    padding: 1.5rem;
+  }
+
+  .disclaimer h2 {
+    font-size: 1.5rem;
+  }
+
+  .disclaimer h3 {
+    font-size: 1.25rem;
+  }
+
+  .disclaimer p {
+    font-size: 1rem;
+  }
+}

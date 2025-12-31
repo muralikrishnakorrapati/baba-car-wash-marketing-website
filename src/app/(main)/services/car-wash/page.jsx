@@ -128,6 +128,18 @@ export default function CarWashPage() {
       {/* Services Offered Section */}
       <section className={styles.servicesOfferedSection}>
         <div className={styles.sectionContainer}>
+          {/* Section Header */}
+          <motion.div
+            className={styles.sectionHeader}
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <span className={styles.sectionSubtitle}>What We Do</span>
+            <h2 className={styles.sectionTitle}>Services Offered</h2>
+          </motion.div>
+
           <motion.div
             className={styles.servicesOfferedContent}
             initial={{ opacity: 0, y: 20 }}
@@ -136,8 +148,6 @@ export default function CarWashPage() {
             transition={{ duration: 0.5 }}
           >
             <div className={styles.servicesOfferedText}>
-              <span className={styles.sectionSubtitle}>What We Do</span>
-              <h2 className={styles.sectionTitle}>Services Offered</h2>
               <div className={styles.purpleBox}>
                 <p className={styles.description}>
                   Our service network is spread across one of most of the

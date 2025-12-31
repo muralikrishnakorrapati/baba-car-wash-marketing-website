@@ -15,45 +15,50 @@ import styles from './BookingForm.module.css';
 
 const serviceOptions = [
   {
-    category: 'One-Time Services',
+    category: 'Contractual Site Pricing - One-Time Services',
     options: [
-      {
-        value: 'sedan-onetime',
-        label: 'Sedan Car (Internal & External - One Time) - AED 35',
-        price: 35,
-      },
-      {
-        value: '4x4-onetime',
-        label: '4x4 Car (Internal & External - One Time) - AED 45',
-        price: 45,
-      },
-      { value: 'onetime-wash', label: 'One Time Wash - AED 20', price: 20 },
+      { value: 'onetime-wash', label: 'One-Time Wash - AED 20', price: 20 },
     ],
   },
   {
-    category: 'Sedan Car Packages',
+    category: 'Contractual Site Pricing - Sedan Car Packages',
     options: [
-      { value: 'sedan-weekly', label: 'Once A Week Wash - AED 60', price: 60 },
-      { value: 'sedan-twice', label: 'Twice A Week Wash - AED 80', price: 80 },
+      { value: 'sedan-weekly', label: 'Once a Week Wash - AED 60', price: 60 },
+      { value: 'sedan-twice', label: 'Twice a Week Wash - AED 80', price: 80 },
       {
         value: 'sedan-thrice',
-        label: 'Thrice A Week Wash - AED 100',
+        label: 'Three Times a Week Wash - AED 100',
         price: 100,
       },
       { value: 'sedan-daily', label: 'Daily Wash - AED 150', price: 150 },
     ],
   },
   {
-    category: '4x4 Car Packages',
+    category: 'Contractual Site Pricing - 4x4 Car Packages',
     options: [
-      { value: '4x4-weekly', label: 'Once A Week Wash - AED 80', price: 80 },
-      { value: '4x4-twice', label: 'Twice A Week Wash - AED 100', price: 100 },
+      { value: '4x4-weekly', label: 'Once a Week Wash - AED 80', price: 80 },
+      { value: '4x4-twice', label: 'Twice a Week Wash - AED 100', price: 100 },
       {
         value: '4x4-thrice',
-        label: 'Thrice A Week Wash - AED 120',
+        label: 'Three Times a Week Wash - AED 120',
         price: 120,
       },
       { value: '4x4-daily', label: 'Daily Wash - AED 170', price: 170 },
+    ],
+  },
+  {
+    category: 'Non-Contractual Sites - Mobile Car Wash Services',
+    options: [
+      {
+        value: 'mobile-sedan',
+        label: 'Sedan Car (Interior & Exterior Wash) - AED 35',
+        price: 35,
+      },
+      {
+        value: 'mobile-4x4',
+        label: '4x4 Car (Interior & Exterior Wash) - AED 45',
+        price: 45,
+      },
     ],
   },
 ];

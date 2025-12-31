@@ -18,7 +18,7 @@ const services = [
     id: 1,
     title: 'Car Washing & Cleaning',
     image: '/image1.avif',
-    link: '/services/car-washing',
+    link: '/services/car-wash',
   },
   {
     id: 2,

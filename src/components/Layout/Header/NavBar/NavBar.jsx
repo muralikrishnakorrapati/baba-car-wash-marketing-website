@@ -51,7 +51,7 @@ export default function NavBar({
       submenu: [
         { label: 'Work Schedules', path: '/about/work-schedules' },
         { label: 'Communities', path: '/about/communities' },
-        { label: 'Terms & Conditions', path: '/terms' },
+        { label: 'Terms & Conditions', path: '/about/terms' },
       ],
     },
     {
@@ -206,6 +206,16 @@ export default function NavBar({
                 >
                   Sign In
                 </Button> */}
+                <Link href="/appointment">
+                  <Button
+                    variant="primary"
+                    size="small"
+                    shape="soft"
+                    btnColor="var(--color-secondary)"
+                  >
+                    Book an Appointment
+                  </Button>
+                </Link>
               </li>
             </ul>
 
@@ -214,6 +224,11 @@ export default function NavBar({
               {/* <Button size="medium" variant="secondary" fullWidth>
                 Sign In
               </Button> */}
+              <Link href="/appointment" style={{ width: '100%' }}>
+                <Button size="medium" variant="secondary" fullWidth>
+                  Book an Appointment
+                </Button>
+              </Link>
               <div className={styles.socialIcons}>
                 <a href="#" className={styles.socialIcon}>
                   <Youtube size={20} />

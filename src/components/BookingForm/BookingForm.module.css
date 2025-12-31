@@ -9,6 +9,7 @@
   padding: 3rem;
   background: var(--color-bg-primary);
   border-radius: 16px;
+  color: var(--color-bg-inverse);
   border: 2px solid var(--color-secondary);
   box-shadow: 0 20px 60px
     color-mix(in srgb, var(--color-primary) 15%, transparent);
@@ -81,7 +82,7 @@
   width: 100%;
   padding: 0.875rem 1rem;
   font-size: 0.95rem;
-  color: var(--color-neutral-1);
+  color: var(--color-bg-inverse);
   background-color: var(--color-bg-secondary);
   border: 2px solid color-mix(in srgb, var(--color-neutral-4), transparent 70%);
   border-radius: 8px;
