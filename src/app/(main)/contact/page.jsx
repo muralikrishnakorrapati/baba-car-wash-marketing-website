@@ -27,13 +27,8 @@ export default function ContactPage() {
     setIsSubmitting(true);
 
     try {
-      // Use local PHP server URL if on localhost, otherwise relative path
-      const isLocal =
-        window.location.hostname === 'localhost' ||
-        window.location.hostname === '127.0.0.1';
-      const apiUrl = isLocal
-        ? 'http://localhost:8000/api/contact.php'
-        : '/api/contact.php';
+      // Use Next.js API route
+      const apiUrl = '/api/contact';
 
       const response = await fetch(apiUrl, {
         method: 'POST',
