@@ -119,8 +119,12 @@ export default function BookingForm() {
     setIsSubmitting(true);
 
     try {
-      // Use Next.js API route
-      const apiUrl = '/api/booking';
+      // Use external email service
+      const apiUrl =
+        process.env.NEXT_PUBLIC_EMAIL_SERVICE_URL?.replace(
+          '/contact',
+          '/booking'
+        ) || 'http://localhost:3001/api/booking';
 
       const response = await fetch(apiUrl, {
         method: 'POST',

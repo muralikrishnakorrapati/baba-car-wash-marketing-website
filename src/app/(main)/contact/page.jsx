@@ -27,8 +27,10 @@ export default function ContactPage() {
     setIsSubmitting(true);
 
     try {
-      // Use Next.js API route
-      const apiUrl = '/api/contact';
+      // Use external email service
+      const apiUrl =
+        process.env.NEXT_PUBLIC_EMAIL_SERVICE_URL ||
+        'http://localhost:3001/api/contact';
 
       const response = await fetch(apiUrl, {
         method: 'POST',
